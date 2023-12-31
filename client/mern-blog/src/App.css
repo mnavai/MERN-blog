@@ -12,7 +12,9 @@ img{
 header{
   display: flex;
   justify-content: space-between;
+  margin-top:50px;
   margin-bottom: 50px;
+  align-items: center;
 }
 header a{
   text-decoration: none;
@@ -20,7 +22,7 @@ header a{
 }
 header a.logo{
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 header nav{
   display: flex;
@@ -30,11 +32,13 @@ div.post{
   display: grid;
   grid-template-columns: .9fr 1.2fr;
   gap: 25px;
+  font-size: .9rem;
 }
 div.post div.image{
-  width: 85%;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 div.post div.texts h2{
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
