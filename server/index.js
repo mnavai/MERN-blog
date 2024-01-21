@@ -2,9 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const User = require('./models/User')
 const bcrypt = require('bcryptjs')
+const { default: mongoose } = require('mongoose');
 const app = express();
 const jwt = require('jsonwebtoken');
-const { default: mongoose } = require('mongoose');
+
 
 const salt = bcrypt.genSaltSync(10)
 const secret = 'dsjfgfhdgdgdfgkdfbndvjbd'
