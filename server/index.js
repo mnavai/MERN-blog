@@ -1,11 +1,10 @@
 const express = require('express');
 const cors = require('cors');
+const { default: mongoose } = require('mongoose');
 const User = require('./models/User')
 const bcrypt = require('bcryptjs')
-const { default: mongoose } = require('mongoose');
 const app = express();
 const jwt = require('jsonwebtoken');
-
 
 const salt = bcrypt.genSaltSync(10)
 const secret = 'dsjfgfhdgdgdfgkdfbndvjbd'
@@ -37,7 +36,7 @@ app.post('/login', async (req, res) => {
     if (passOk){
         jwt.sign({username, id:userDoc._id},secret, {}, (err,token) => {
             if (err) throw err;
-            res.json(token)
+            res.json()
         })
         res.json()
     } else {
