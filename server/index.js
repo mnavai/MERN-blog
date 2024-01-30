@@ -36,9 +36,8 @@ app.post('/login', async (req, res) => {
     if (passOk){
         jwt.sign({username, id:userDoc._id},secret, {}, (err,token) => {
             if (err) throw err;
-            res.json()
-        })
-        res.json()
+            res.json(token)
+        });
     } else {
         res.status(400).json('wrong credential')
     }
