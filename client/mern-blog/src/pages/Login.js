@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import {Navigate} from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [redirect, setRedirect] = useState(false);
 
   const login = async (e) => {
     e.preventDefault();
-    try {
+    
       const response = await fetch('http://localhost:4000/login', {
         method: 'POST',
         body: JSON.stringify({ username, password }),
@@ -15,14 +17,15 @@ const Login = () => {
         },
         credentials: 'include', 
       });
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-    } catch (error) {
-      console.error('Fetch error:', error);
-    }
+      if (response.ok) {
+        setRedirect(true);
+      } else {
+        alert('Credentials are incorrect!')
+      }   
   };
-  
+  if (redirect) {
+    return <Navigate to={'/'} />
+  }
   return (
     <form className='login' onSubmit={login}>
       <h1>Login</h1>
