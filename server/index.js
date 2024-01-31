@@ -9,7 +9,8 @@ const jwt = require('jsonwebtoken');
 const salt = bcrypt.genSaltSync(10)
 const secret = 'dsjfgfhdgdgdfgkdfbndvjbd'
 
-app.use(cors());
+app.use(cors({credentials:true, origin:'http://localhost:3000',methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+allowedHeaders: ['Content-Type', 'Authorization']}));
 app.use(express.json());
 
 mongoose.connect('mongodb+srv://blogger:8XoYG0n44rxta3fX@cluster0.2tiperl.mongodb.net/?retryWrites=true&w=majority');
