@@ -5,6 +5,7 @@ const User = require('./models/User')
 const bcrypt = require('bcryptjs')
 const app = express();
 const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 
 const salt = bcrypt.genSaltSync(10)
 const secret = 'dsjfgfhdgdgdfgkdfbndvjbd'
@@ -12,6 +13,7 @@ const secret = 'dsjfgfhdgdgdfgkdfbndvjbd'
 app.use(cors({credentials:true, origin:'http://localhost:3000',methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 allowedHeaders: ['Content-Type', 'Authorization']}));
 app.use(express.json());
+app.use(cookieParser())
 
 mongoose.connect('mongodb+srv://blogger:8XoYG0n44rxta3fX@cluster0.2tiperl.mongodb.net/?retryWrites=true&w=majority');
 
@@ -42,6 +44,11 @@ app.post('/login', async (req, res) => {
     } else {
         res.status(400).json('wrong credential')
     }
+})
+
+app.get('/profile', (res,req) => {
+    const {token} = req.cookies
+    res.json(req.cookies)
 })
 
 app.listen(4000);
