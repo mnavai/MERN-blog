@@ -12,7 +12,7 @@ const Post = () => {
             <a className="author">Maryam Navaei</a>
             <time>2024-12-31 11:45</time>
           </p>
-          <p className="summary">AI is all the rage — particularly text-generating AI, also known as large language models (think models along the lines of ChatGPT). In one recent survey of ~1,000 enterprise organizations, 67.2% say that they see adopting large language models (LLMs) as a top priority by early 2024.</p>
+          <p className="summary">AI is all the rage — particularly text-generating AI, also known as Large Language Models (think models along the lines of ChatGPT). In one recent survey of ~1,000 enterprise organizations, 67.2% say that they see adopting large language models (LLMs) as a top priority by early 2024.</p>
         </div>
       </div>
   )
