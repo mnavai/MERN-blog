@@ -10,7 +10,7 @@ const Post = () => {
           <h2>Giga ML wants to help companies deploy LLMs offline!</h2>
           <p className="info">
             <a className="author">Maryam Navaei</a>
-            <time>2024-12-31 11:45</time>
+            <time>11:45 2024-12-31</time>
           </p>
           <p className="summary">AI is all the rage — particularly text-generating AI, also known as Large Language Models (think models along the lines of ChatGPT). In one recent survey of ~1,000 enterprise organizations, 67.2% say that they see adopting large language models (LLMs) as a top priority by early 2024.</p>
         </div>
