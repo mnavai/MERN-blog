@@ -7,7 +7,7 @@ const Post = () => {
           <img src="https://techcrunch.com/wp-content/uploads/2021/05/GettyImages-1209495734.jpg?w=430&h=230&crop=1" alt="ai" />
         </div>
         <div className="texts">
-          <h2>Giga ML wants to help companies deploy LLMs offline!</h2>
+          <h2>Giga ML wants to help companies deploy LLMs offline</h2>
           <p className="info">
             <a className="author">Maryam Navaei</a>
             <time>11:45 2024-12-31</time>
